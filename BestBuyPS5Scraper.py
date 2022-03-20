@@ -16,14 +16,15 @@ outOfStockMessage = 'PlayStation 5 consoles sold out quickly. Please check back 
 textXpath = '//*[@id="root"]/div/div[4]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div/p'
 
 def sendEmail():
-    EMAIL_ADDRESS = os.environ.get('GMAIL_USER')
-    EMAIL_PASS = os.environ.get('GMAIL_PASS')
+    EMAIL_ADDRESS = 'Your Email Address'
+    EMAIL_PASS = 'Your Email Password'
+    EMAIL_RECEIP = 'Recipient Email Address'
     filename = "C:\\Bestbuy.txt"
 
     msg = EmailMessage()
     msg['Subject'] = 'Best Buy Update?'
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = 'Your Gmail address'
+    msg['To'] = EMAIL_RECEIP
     msg['CC'] = 'A second Gmail address' #not required
     msg.add_attachment(open(filename, "r").read(), filename ="Postings.txt")
 
